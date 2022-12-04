@@ -52,22 +52,22 @@ useEffect(()=>{
 
 
   return (
-    
+    <>
    
-    <div className="App">
-      {/* <input onChange={(e)=>fetchPokemonList(e.target.value)}/> */}
+    <div className="container md-3">
+      <input onChange={(e)=>fetchPokemonList(e.target.value)}/>
 
   
 
        {pokemonList&&pokemonList.map((item:any, index:number)=>
-      {return (<div key={item.name}>
+      {return ( <Link to={`/${item.name}`}  className='card '><div key={item.name}>
             
-     <Link to={`/${item.name}`}> <img src={item.img}>
+     <img src={item.img}>
         
-      </img></Link>
-      <div> {item.name}</div>
+      </img>
+      <div className='name'> {item.name}</div>
 
-      </div>
+      </div></Link>
              
 
   
@@ -75,13 +75,17 @@ useEffect(()=>{
     
   )}
 
-
+</div>  
    
-<div><button onClick={()=>{(url.page)>1?setUrl({url:prev, page:(--url.page)}):setUrl({url:`https://pokeapi.co/api/v2/pokemon/`,page:1})
+<div className='button-wrapper'><button onClick={()=>{(url.page)>1?setUrl({url:prev, page:(--url.page)}):setUrl({url:`https://pokeapi.co/api/v2/pokemon/`,page:1})
 }}>Prev</button>
 <button onClick={()=>{
   (url.page)<58&&setUrl({url:next, page:++url.page})}}> Next</button></div>
-  </div>  
+ 
+
+
+  </>
+
   );
 }
 

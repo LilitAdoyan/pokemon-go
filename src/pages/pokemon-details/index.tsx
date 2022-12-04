@@ -29,16 +29,25 @@ useEffect(()=>{
   return (
     <div >
 
-
+{pokemonData&&<img src={pokemonData}/>}
   <h3>Stats: </h3>
-   
-  {pokemonData&&<img src={pokemonData}/>}
-{stats&&stats.map((stat:any)=><div>
-<div><span>Stat name: </span><span>{stat.stat.name}</span></div>
-<div><span>Base stat: </span><span>{stat.base_stat}</span></div>
-<div><span>Effort: </span><span>{stat.effort}</span></div>
+  <table>
+    <thead>
+      <th>Stat name</th>
+      <th>Base stat</th>
+      <th>Effort</th>
+    </thead>
+    <tbody>
+{stats&&stats.map((stat:any)=><tr>
+<td>{stat.stat.name}</td>
+<td>{stat.base_stat}</td>
+<td>{stat.effort}</td>
 
-</div>)}
+</tr>)}
+    </tbody>
+  </table>
+ 
+
 <h3>Weight</h3>
 
     </div>

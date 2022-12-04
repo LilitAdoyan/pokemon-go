@@ -1,0 +1,40 @@
+.App{
+width: 1200px;
+max-width: 100%;
+margin: auto;
+}
+.container{
+    display: flex;  
+    max-width: 100%;  
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+button{
+    background-color: aqua;
+    border: none;
+    margin: 10px;
+    border-radius: 8px;
+    min-width: 100px;
+    height: 30px;
+    cursor: pointer;
+}
+.button-wrapper{
+    text-align: center;
+    margin-top: 20px;
+}
+.card{
+    align-items: center;
+    text-align: center;
+    width: 400px;
+}
+.card:hover{
+    background-color: beige;
+    cursor: pointer;
+    border-radius: 8px;
+
+}
+
+.name{
+    margin-bottom: 20px;
+}
